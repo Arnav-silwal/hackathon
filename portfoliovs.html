@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="portfoliovs.css">
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">PORTFOLIO</a>
+
+        <nav>
+            <a href="#" class="active"> Home</a>
+            <a href="#qualification" >Qualification</a>
+            <a href="#experience" >Experience</a>
+            <a href="#achievement" >Achievement</a>
+             <a href="#contact" >Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>ARNAV</span></h1>
+            <h3 class="typing-text">I'm a high school student studiying in NEPAL</h3>
+            <p> </p>
+           
+        </div>
+    </section>
+    <!--qualification-->
+  <section id="qualification" class="qualification">
+  <h2 class="heading">Qualification</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>ICT award winner</h3>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>HTML and CSS course done</h3>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Multiple exibition complete</h3>
+        <p></p>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Experience -->
+<section id="experience" class="experience">
+  <h2 class="heading">Experience</h2>
+  <div class="exp-container">
+    <div class="exp-card">
+      <h3>Multiple MUNs <b>hosted </b></h3>
+      <span class="year">Seda MUN 25 <br>avs MUN25<br>Multiple SQC attended</span>
+     
+    </div>
+
+    <div class="exp-card">
+      <h3>Intern</h3>
+      <span class="year">Passionate learner</span>
+     
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Achievements -->
+<section class="achievement" id="achievement">
+    <h2 class="heading">Achievements</h2>
+
+    <div class="achieve-container">
+        <div class="achieve-box">
+            <img src="c:\Users\Admin\Desktop\portfoliovs\mant.jpg" alt="">
+            <h3></h3>
+            <p></p>
+        </div>
+
+        <div class="achieve-box">
+            <img src="c:\Users\Admin\Desktop\portfoliovs\manto.jpg" alt="">
+            <h3></h3>
+            <p></p>
+        </div>
+
+        <div class="achieve-box">
+            <img src="c:\Users\Admin\Desktop\portfoliovs\manty.jpg" alt="">
+            <h3></h3>
+            <p></p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <h2 class="heading">Contact Me</h2>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <p><i class="fa-solid fa-envelope"></i> arnavsilwal@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +977 9840705010</p>
+            <p><i class="fa-brands fa-github"></i>https://github.com/Arnav-silwal  </p>
+            <p><i class="fa-brands fa-instagram"></i>failed.fetus9</p>
+            <p><i class="fa-brands fa-slack"></i> https://hackclub.enterprise.slack.com/team/U0A77C3SU3S</p>
+          
+                  
+          </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Your Message" required rows="6"></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+</section>
+
+<script>
+const timelineItems = document.querySelectorAll(".timeline-item");
+const expCards = document.querySelectorAll(".exp-card");
+
+// Intersection Observer options
+const observerOptions = { threshold: 0.4 };
+
+// Function to observe items
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");  // for timeline-item
+      entry.target.classList.add("show");    // for exp-card
+      observer.unobserve(entry.target);      // stop observing after reveal
+    }
+  });
+}, observerOptions);
+
+// Observe all timeline items and experience cards
+timelineItems.forEach(item => observer.observe(item));
+expCards.forEach(card => observer.observe(card));
+</script>
+
+<footer class="protected-footer" >
+  Made with ❤️ by <a href="https://saurav-pandey999.github.io/worldofvisions/" target="_blank">Vision-S</a>
+</footer>
+
+
+<script>
+const footer = document.getElementById('footer');
+new MutationObserver(() => {
+    if (!document.body.contains(footer)) {
+        document.body.appendChild(footer);
+    }
+}).observe(document.body, { childList: true, subtree: true });
+</script>
+
+
+</body>
+</html>
